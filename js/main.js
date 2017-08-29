@@ -1,4 +1,3 @@
-
 // 1. email уже занят (сверяться со статическим списком email-ов, который 
 //   хоранится на глобальном уровне в переменной usedEmails) 
 // ['author@mail.com', 'foo@mail.com', 'tester@mail.com']
@@ -60,8 +59,10 @@ var usedEmails = ['author@mail.com', 'foo@mail.com', 'tester@mail.com'];
       }
     }
     clickButton(e) {
+      // debugger
       let alertMessages = document.querySelectorAll('.alert.alert-danger[hidden]')
-      if (!(this.isSubmitMail === true && this.isSubmitPas === true)) {
+      if (this.isSubmitMail === false || this.isSubmitPas === false) {
+        e.preventDefault();
         this.checkBoxMessage.textContent = 'You didn\'t validate all require * fields';
         this.checkBoxMessage.hidden = false;
       } else if (alertMessages.length !== this.alertMessagesAmount) {
@@ -174,5 +175,37 @@ var usedEmails = ['author@mail.com', 'foo@mail.com', 'tester@mail.com'];
     }
   }
   window.FormValidation = FormValidation;
+  // 
+  const scrollToPos = (scrollTo, clickTarget, durat) => {
+    if (typeof scrollTo === 'object') {
+      scrollTo = $(scrollTo).offset().top;
+    }
+    $(clickTarget).click(function() {
+      $("html, body").animate({
+        scrollTop: scrollTo
+      }, durat)
+    })
+  }
+  window.scrollToPos = scrollToPos;
+  // 
+  const hideElement = (elToHide, elWhenHide) => {
+    const isElemInView = () => {
+      let hideMoment = elWhenHide.getBoundingClientRect().top
+      if (($(window).height() - hideMoment) > 1) {
+        elToHide.style.display = 'none';
+        $(window).off('resize scroll', isElemInView)
+        return;
+      }
+      elToHide.style.display = 'inline';
+    }
+    isElemInView()
+    $(window).on('resize scroll', isElemInView)
+  }
+  window.hideElement = hideElement;
 })();
-new FormValidation()
+$(function() {
+  let buttonFixed = document.querySelector('.go-validate');
+  new FormValidation();
+  hideElement(buttonFixed, document.querySelector('.form-user'))
+  scrollToPos(document.querySelector('.jumbotron'), buttonFixed, 600);
+})
