@@ -1,3 +1,41 @@
 .alert {
-	margin-top: 5px;
+  margin-top: 5px;
+}
+
+.list-group-item-success {
+  text-transform: uppercase;
+}
+
+.list-group-item {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .list-group-item {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .list-group {
+    max-width: 70%;
+  }
+}
+.go-validate {
+  position: fixed;
+  writing-mode: vertical-rl;
+  z-index: 2;
+  top: 0;
+  right: 26px;
+}
+@media (min-width: 768px) {
+  .go-validate {
+    right: 10%;
+    top: 7%;
+  }
+}
+@media (min-width: 992px) {
+  .go-validate {
+    right: 20%;
+  }
 }

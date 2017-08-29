@@ -1,60 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Form validation</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form validation</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>    
+  </head>
 
-<body>
-  <div class="container">
-    <h1>User information form</h1>
-    <form role="form" class="form-user">
-      <div class="form-group required">
-        <label class="control-label" for="email">Email<sup>*</sup></label>
-        <input class="form-control" id="email" placeholder="Email" type="text">
-        <div class="alert alert-danger" hidden></div>
+  <body>
+
+    <div class="container">
+      <ul class="list-group center-block">
+        <span type="button" class="btn btn-danger go-validate">Click me! Start validation! &#x25BC;</span>
+        <!-- <button type="button" class="btn btn-primary go-validate btn-pr"> &#x25BC; Go to validation!</button> -->
+        <li class="list-group-item list-group-item-success text-center">There are rules I used when made this widget</li>
+        <li class="list-group-item"></li>
+
+        <li class="list-group-item list-group-item-info text-center">Main rule:</li>
+        <li class="list-group-item">Validate when type</li>
+
+        <li class="list-group-item text-center list-group-item-info">Email rules:</li>
+        <li class="list-group-item">Email should have no spaces</li>
+        <li class="list-group-item">Email have to have symbol @</li>
+        <li class="list-group-item">These emails have already taken: 'author@mail.com', 'foo@mail.com', 'tester@mail.com'</li>
+
+        <li class="list-group-item text-center list-group-item-info">Password rules:</li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item">All fields require * are not validate</li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+      </ul>
+      <div class="jumbotron">
+        <h2 class="text-center">User information form</h2>
       </div>
+      <form role="form" class="form-user">
+        <div class="form-group required">
+          <label class="control-label" for="email">Email<sup>*</sup></label>
+          <input class="form-control" id="email" placeholder="Email" type="text">
+          <div class="alert alert-danger" hidden></div>
+        </div>
 
-      <div class="form-group required">
-        <label for="password">Password<sup>*</sup></label>
-        <input class="form-control" id="password" placeholder="Password" type="password">
-        <div class="alert alert-danger" hidden></div>
-      </div>
+        <div class="form-group required">
+          <label for="password">Password<sup>*</sup></label>
+          <input class="form-control" id="password" placeholder="Password" type="password">
+          <div class="alert alert-danger" hidden></div>
+        </div>
 
-      <div class="form-group">
-        <label for="city">City where are you live</label>
-        <input class="form-control" id="city" placeholder="City" type="text">
-        <div class="alert alert-danger" hidden></div>
-      </div>
+        <div class="form-group">
+          <label for="city">City where are you live</label>
+          <input class="form-control" id="city" placeholder="City" type="text">
+          <div class="alert alert-danger" hidden></div>
+        </div>
 
-      <div class="form-group">
-        <label for="phone">Your phone number</label>
-        <input class="form-control" id="phone" placeholder="Phone number in international format +xxx xxx-xx-xx" type="text">
-        <div class="alert alert-danger" hidden></div>
-      </div>
+        <div class="form-group">
+          <label for="phone">Your phone number</label>
+          <input class="form-control" id="phone" placeholder="Phone number in international format +xxx xxx-xx-xx" type="text">
+          <div class="alert alert-danger" hidden></div>
+        </div>
 
-      <div class="form-group required">
-        <div class="checkbox">
-          <label>
+        <div class="form-group required">
+          <div class="checkbox">
+            <label>
 						<input type="checkbox">Agree with <a href="#">all</a>
 					</label>
+          </div>
         </div>
-      </div>
 
-      <div class="alert alert-danger button-msg" hidden></div>
+        <div class="alert alert-danger button-msg" hidden></div>
 
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Send data</button>
-      </div>
-    </form>
-  </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Send data</button>
+        </div>
+      </form>
+    </div>
 
-  <script src="js/main.js"></script>
-</body>
+  </body>
 
 </html>
