@@ -194,7 +194,9 @@ var usedEmails = ['author@mail.com', 'foo@mail.com', 'tester@mail.com'];
       if (($(window).height() - hideMoment) > 1) {
         elToHide.style.display = 'none';
         $(window).off('resize scroll', isElemInView)
+        return;
       }
+      elToHide.style.display = 'inline';
     }
     isElemInView()
     $(window).on('resize scroll', isElemInView)
@@ -204,6 +206,6 @@ var usedEmails = ['author@mail.com', 'foo@mail.com', 'tester@mail.com'];
 $(function() {
   let buttonFixed = document.querySelector('.go-validate');
   new FormValidation();
-  scrollToPos(document.querySelector('.jumbotron'), buttonFixed, 600);
   hideElement(buttonFixed, document.querySelector('.form-user'))
+  scrollToPos(document.querySelector('.jumbotron'), buttonFixed, 600);
 })
