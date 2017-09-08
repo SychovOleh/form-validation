@@ -10,8 +10,6 @@
 
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -204,36 +202,36 @@ var usedEmails = ['author@mail.com', 'foo@mail.com', 'tester@mail.com'];
 
   window.FormValidation = FormValidation;
   // 
-  var scrollToPos = function scrollToPos(scrollTo, clickTarget, durat) {
-    if ((typeof scrollTo === 'undefined' ? 'undefined' : _typeof(scrollTo)) === 'object') {
-      scrollTo = $(scrollTo).offset().top;
-    }
-    $(clickTarget).click(function () {
-      $("html, body").animate({
-        scrollTop: scrollTo
-      }, durat);
-    });
-  };
-  window.scrollToPos = scrollToPos;
-  // 
-  var hideElement = function hideElement(elToHide, elWhenHide) {
-    var isElemInView = function isElemInView() {
-      var hideMoment = elWhenHide.getBoundingClientRect().top;
-      if ($(window).height() - hideMoment > 1) {
-        elToHide.style.display = 'none';
-        $(window).off('resize scroll', isElemInView);
-        return;
-      }
-      elToHide.style.display = 'inline';
-    };
-    isElemInView();
-    $(window).on('resize scroll', isElemInView);
-  };
-  window.hideElement = hideElement;
+  // const scrollToPos = (scrollTo, clickTarget, durat) => {
+  //   if (typeof scrollTo === 'object') {
+  //     scrollTo = $(scrollTo).offset().top;
+  //   }
+  //   $(clickTarget).click(function() {
+  //     $("html, body").animate({
+  //       scrollTop: scrollTo
+  //     }, durat)
+  //   })
+  // }
+  // window.scrollToPos = scrollToPos;
+  // // 
+  // const hideElement = (elToHide, elWhenHide) => {
+  //   const isElemInView = () => {
+  //     let hideMoment = elWhenHide.getBoundingClientRect().top
+  //     if (($(window).height() - hideMoment) > 1) {
+  //       elToHide.style.display = 'none';
+  //       $(window).off('resize scroll', isElemInView)
+  //       return;
+  //     }
+  //     elToHide.style.display = 'inline';
+  //   }
+  //   isElemInView()
+  //   $(window).on('resize scroll', isElemInView)
+  // }
+  // window.hideElement = hideElement;
 })();
 $(function () {
-  var buttonFixed = document.querySelector('.go-validate');
+  // let buttonFixed = document.querySelector('.go-validate');
   new FormValidation();
-  hideElement(buttonFixed, document.querySelector('.form-user'));
-  scrollToPos(document.querySelector('.jumbotron'), buttonFixed, 600);
+  // hideElement(buttonFixed, document.querySelector('.form-user'))
+  // scrollToPos(document.querySelector('.jumbotron'), buttonFixed, 600);
 });
