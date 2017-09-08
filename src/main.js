@@ -176,36 +176,36 @@ var usedEmails = ['author@mail.com', 'foo@mail.com', 'tester@mail.com'];
   }
   window.FormValidation = FormValidation;
   // 
-  const scrollToPos = (scrollTo, clickTarget, durat) => {
-    if (typeof scrollTo === 'object') {
-      scrollTo = $(scrollTo).offset().top;
-    }
-    $(clickTarget).click(function() {
-      $("html, body").animate({
-        scrollTop: scrollTo
-      }, durat)
-    })
-  }
-  window.scrollToPos = scrollToPos;
-  // 
-  const hideElement = (elToHide, elWhenHide) => {
-    const isElemInView = () => {
-      let hideMoment = elWhenHide.getBoundingClientRect().top
-      if (($(window).height() - hideMoment) > 1) {
-        elToHide.style.display = 'none';
-        $(window).off('resize scroll', isElemInView)
-        return;
-      }
-      elToHide.style.display = 'inline';
-    }
-    isElemInView()
-    $(window).on('resize scroll', isElemInView)
-  }
-  window.hideElement = hideElement;
+  // const scrollToPos = (scrollTo, clickTarget, durat) => {
+  //   if (typeof scrollTo === 'object') {
+  //     scrollTo = $(scrollTo).offset().top;
+  //   }
+  //   $(clickTarget).click(function() {
+  //     $("html, body").animate({
+  //       scrollTop: scrollTo
+  //     }, durat)
+  //   })
+  // }
+  // window.scrollToPos = scrollToPos;
+  // // 
+  // const hideElement = (elToHide, elWhenHide) => {
+  //   const isElemInView = () => {
+  //     let hideMoment = elWhenHide.getBoundingClientRect().top
+  //     if (($(window).height() - hideMoment) > 1) {
+  //       elToHide.style.display = 'none';
+  //       $(window).off('resize scroll', isElemInView)
+  //       return;
+  //     }
+  //     elToHide.style.display = 'inline';
+  //   }
+  //   isElemInView()
+  //   $(window).on('resize scroll', isElemInView)
+  // }
+  // window.hideElement = hideElement;
 })();
 $(function() {
-  let buttonFixed = document.querySelector('.go-validate');
+  // let buttonFixed = document.querySelector('.go-validate');
   new FormValidation();
-  hideElement(buttonFixed, document.querySelector('.form-user'))
-  scrollToPos(document.querySelector('.jumbotron'), buttonFixed, 600);
+  // hideElement(buttonFixed, document.querySelector('.form-user'))
+  // scrollToPos(document.querySelector('.jumbotron'), buttonFixed, 600);
 })

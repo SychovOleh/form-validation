@@ -7,19 +7,12 @@
 }
 
 .list-group-item {
-  margin: 0;
+  padding: 3px 15px;
 }
 
-@media (min-width: 768px) {
-  .list-group-item {
-    max-width: 90%;
-  }
-}
-
-@media (min-width: 992px) {
-  .list-group {
-    max-width: 70%;
-  }
+.list-group-item-info,
+.list-group-item-success {
+  padding: 10px 15px;
 }
 
 .btn-inside {

@@ -15,37 +15,9 @@
   <body>
 
     <div class="container">
-      <ul class="list-group center-block">
-        <button type="button" class="btn btn-danger go-validate"><span class="btn-inside">Click me! Start validation! &#x25BC;</span></button>
-
-        <li class="list-group-item list-group-item-success text-center">There are rules I used when made this widget</li>
-        <li class="list-group-item"></li>
-
-        <li class="list-group-item list-group-item-info text-center">Main rule:</li>
-        <li class="list-group-item">Validate when type</li>
-
-        <li class="list-group-item text-center list-group-item-info">Email rules:</li>
-        <li class="list-group-item">Email should have no spaces</li>
-        <li class="list-group-item">Email have to have symbol @</li>
-        <li class="list-group-item">These emails have already taken: 'author@mail.com', 'foo@mail.com', 'tester@mail.com'</li>
-
-        <li class="list-group-item text-center list-group-item-info">Password rules:</li>
-        <li class="list-group-item">Password should have latin letters and numbers only</li>
-        <li class="list-group-item">Password should have no less than one letter and one number</li>
-        <li class="list-group-item">Password should have no less than five symbols</li>
-
-        <li class="list-group-item text-center list-group-item-info">Phone rules:</li>
-        <li class="list-group-item">Phone number should has by international format starts by +X</li>
-        <li class="list-group-item">Phone number should has only numbers or symbols +, - or barackets</li>
-        <li class="list-group-item">Phone number should has not less then 11 numbers (another symbols do not counting)</li>
-        <li class="list-group-item">Phone number should has not more then 18 numbers (another symbols do not counting)</li>
-
-        <li class="list-group-item">All fields require * are not validate</li>
-        <li class="list-group-item">Checkbox "I agree with everything" is not set</li>
-        <li class="list-group-item"></li>
-      </ul>
-      <div class="jumbotron">
-        <h2 class="text-center">User information form</h2>
+      <div class="jumbotron text-center">
+        <h2>User information form</h2>
+        <p>You can see rules those I used when made this widget below</p>
       </div>
       <form role="form" class="form-user">
         <div class="form-group required">
@@ -61,14 +33,14 @@
         </div>
 
         <div class="form-group">
-          <label for="city">City where are you live</label>
+          <label for="city">City where you live</label>
           <input class="form-control" id="city" placeholder="City" type="text">
           <div class="alert alert-danger" hidden></div>
         </div>
 
         <div class="form-group">
           <label for="phone">Your phone number</label>
-          <input class="form-control" id="phone" placeholder="Phone number in international format +xxx xxx-xx-xx" type="text">
+          <input class="form-control" id="phone" placeholder="Phone number in an international format +xxx xxx-xx-xx" type="text">
           <div class="alert alert-danger" hidden></div>
         </div>
 
@@ -86,6 +58,33 @@
           <button type="submit" class="btn btn-primary">Send data</button>
         </div>
       </form>
+
+      <ul class="list-group center-block">
+        <button type="button" class="btn btn-danger go-validate"><span class="btn-inside">Click me! Start validation! &#x25BC;</span></button>
+
+        <li class="list-group-item list-group-item-success text-center">There are some rules I used when I made this widget</li>
+
+        <li class="list-group-item list-group-item-info text-center">The main rule:</li>
+        <li class="list-group-item">Validate while typing</li>
+
+        <li class="list-group-item text-center list-group-item-info">Email rules:</li>
+        <li class="list-group-item">An email shouldn't have any spaces</li>
+        <li class="list-group-item">The symbol @ is required</li>
+        <li class="list-group-item">These emails have already been taken: 'author@mail.com', 'foo@mail.com', 'tester@mail.com'</li>
+        <li class="list-group-item text-center list-group-item-info">Password rules:</li>
+        <li class="list-group-item">A password should have latin letters and numbers only</li>
+        <li class="list-group-item">A password should have no less than one letter and one number</li>
+        <li class="list-group-item">A password should have no less than five symbols</li>
+
+        <li class="list-group-item text-center list-group-item-info">Phone rules:</li>
+        <li class="list-group-item">A phone number should have an international format +X</li>
+        <li class="list-group-item">A phone number should have only numbers or symbols +, - or brackets</li>
+        <li class="list-group-item">A phone number should have not less than 11 numbers (another symbols are not counted)</li>
+        <li class="list-group-item">A phone number should have not more than 18 numbers (another symbols are not counted)</li>
+
+        <li class="list-group-item">All required fields should be validated</li>
+        <li class="list-group-item">Checkbox 'I agree with all' should be confirmed</li>
+      </ul>
     </div>
 
   </body>
